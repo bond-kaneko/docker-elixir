@@ -1,0 +1,8 @@
+version: '3.2'
+services:
+  elixir:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./html:/var/www/html
