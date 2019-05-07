@@ -1,8 +1,16 @@
-version: '3.2'
+version: '3'
 services:
-  elixir:
-    build: .
+  app:
+    build: ./app-elixir
     ports:
       - "4000:4000"
     volumes:
       - ./html:/var/www/html
+  mysql:
+    build: ./mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  db:
