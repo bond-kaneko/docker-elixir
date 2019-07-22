@@ -5,11 +5,13 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - ./html:/var/www/html
-  mysql:
-    build: ./mysql
+      - ../:/var/www/html/
+    tty: true
+  db:
+    image: postgres:12
     environment:
-      MYSQL_ROOT_PASSWORD: pass
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_USER: postgres
     volumes:
       - db:/var/lib/mysql
 volumes:

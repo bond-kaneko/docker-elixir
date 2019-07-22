@@ -1,4 +1,4 @@
-FROM elixir:latest
+FROM elixir:1.9
 
 RUN mix local.hex --force \
  && mix archive.install --force hex phx_new 1.4.4 \
@@ -9,3 +9,4 @@ RUN mix local.hex --force \
  && apt-get install -y build-essential \
  && apt-get install -y inotify-tools \
  && mix local.rebar --force
+
